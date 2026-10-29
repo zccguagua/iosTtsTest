@@ -1,0 +1,31 @@
+name: TtsTestiOS
+
+options:
+  bundleIdPrefix: com.zcc
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "17.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  TtsTestiOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: TtsTest
+        excludes:
+          - "Resources/Info.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zcc.ttstest
+        INFOPLIST_FILE: TtsTest/Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        TARGETED_DEVICE_FAMILY: "1"
+    scheme:
+      testTargets: []
